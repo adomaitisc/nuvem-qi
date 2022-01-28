@@ -8,7 +8,7 @@ import "./Dashboard.css";
 export function Dashboard() {
   return (
     <main className="dashboard-main">
-      <Header />
+      <Header title="Cauã Adomaitis" />
       <Sidebar />
       <Content />
       <Details />

@@ -1,13 +1,15 @@
-import { Clock } from "./header/Display";
 import "./styles/Header.css";
-
 import logo from "../images/logo.svg";
 
-export function Header() {
+type HeaderProps = {
+  title: string;
+};
+
+export function Header(props: HeaderProps) {
   return (
     <main className="header-panel">
       <img src={logo} width={32} className="header-logo" />
-      <p className="header-user">Cauã Adomaitis</p>
+      <p className="header-title">{props.title}</p>
     </main>
   );
 }

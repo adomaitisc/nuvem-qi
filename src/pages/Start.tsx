@@ -1,5 +1,12 @@
+import { Header } from "../components/Header";
+import { Welcome } from "../components/Welcome";
 import "./Start.css";
 
 export function Start() {
-  return <div className="start-main">I am Start</div>;
+  return (
+    <main className="start-main">
+      <Header title="Núvem Qi" />
+      <Welcome />
+    </main>
+  );
 }
