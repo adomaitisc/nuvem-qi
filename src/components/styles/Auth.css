@@ -1,0 +1,28 @@
+.auth-form {
+  padding: 0;
+  margin: 0;
+}
+
+.auth-return {
+  margin-right: 0.8rem;
+  padding: 0 0.2rem 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  font-weight: 300;
+  cursor: pointer;
+  color: rgba(75, 168, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: 0.2s;
+}
+
+.auth-return:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.2s;
+}
+
+.auth-title {
+  color: rgba(75, 168, 255, 0.7);
+  padding: 0;
+  margin: 0;
+}

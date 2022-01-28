@@ -5,19 +5,40 @@ import {
   Login as BtnLogin,
   Register as BtnRegister,
 } from "./welcome/Display";
-import { Login } from "./Login";
+import { Login, Register } from "./Auth";
 import "./styles/Welcome.css";
 
 export function Welcome() {
   const [login, setLogin] = useState(false);
   const [register, setRegister] = useState(false);
 
+  const handleLogin = () => {
+    window.alert("Login");
+  };
+  const handleRegister = () => {
+    window.alert("Register");
+  };
+
   return (
     <main className="welcome-area">
       {login ? (
-        <Login />
+        <Login
+          onSubmit={() => {
+            handleLogin();
+          }}
+          onClick={() => {
+            setLogin(false);
+          }}
+        />
       ) : register ? (
-        <Login />
+        <Register
+          onSubmit={() => {
+            handleRegister();
+          }}
+          onClick={() => {
+            setRegister(false);
+          }}
+        />
       ) : (
         <>
           <Title title="Bem vindo à Núvem Qi." />
