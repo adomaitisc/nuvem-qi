@@ -6,6 +6,7 @@ The Qi Cloud is an online storage system. It serves to provide instantaneous acc
 
 ## Technologies Used
 
+- Vite
 - TypeScript
 - React
 - Pure CSS
