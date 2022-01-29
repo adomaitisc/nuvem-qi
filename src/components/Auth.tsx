@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Button, Field } from "./auth/Display";
+import { Button, Field, Forgot } from "./auth/Display";
 import "./styles/Auth.css";
 
 type AuthProps = {
@@ -26,7 +26,10 @@ export function Login(props: AuthProps) {
         ref={emailRef}
       />
       <Field label="Senha" type="password" placeholder="123456" ref={passRef} />
-      <Button label="Entrar" onClick={props.onSubmit} />
+      <div className="auth-buttons">
+        <Button label="Entrar" onClick={props.onSubmit} />
+        <Forgot label="Esqueceu a Senha?" onClick={""} />
+      </div>
     </form>
   );
 }

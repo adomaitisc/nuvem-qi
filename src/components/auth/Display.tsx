@@ -36,3 +36,11 @@ export function Button(props: ButtonProps) {
     </button>
   );
 }
+
+export function Forgot(props: ButtonProps) {
+  return (
+    <button className="button-forgot" type="button" onClick={props.onClick}>
+      {props.label}
+    </button>
+  );
+}

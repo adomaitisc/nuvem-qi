@@ -1,21 +1,9 @@
 .start-main {
   height: 100vh;
   width: 100vw;
-
-  background: radial-gradient(
-      farthest-side at bottom left,
-      #a600e881,
-      transparent 100%
-    ),
-    radial-gradient(farthest-corner at top right, #a600e883, transparent 150vh),
-    radial-gradient(farthest-corner at top left, #00b2e881, transparent 100vh),
-    radial-gradient(
-      farthest-corner at bottom right,
-      #00b2e885,
-      transparent 160vh
-    );
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
