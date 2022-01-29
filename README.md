@@ -13,8 +13,8 @@ The Qi Cloud is an online storage system. It serves to provide instantaneous acc
 
 ## Details
 
-The Qi Cloud has a Unique style and Usage, being extremely simple and functional at the same time.
+The Qi Cloud has a unique style and usage, being extremely simple and functional.
 
-## Status:
+## Status
 
 The Project is currently in Development.
