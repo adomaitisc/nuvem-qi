@@ -1,11 +1,11 @@
 import { SetStateAction, useState } from "react";
+import { Title, Description, BtnLogin, BtnRegister } from "./welcome/Display";
 import {
-  Title,
-  Description,
-  Login as BtnLogin,
-  Register as BtnRegister,
-} from "./welcome/Display";
-import { Name, Email, Password, ForgotPassword } from "./Auth";
+  FormName,
+  FormEmail,
+  FormPassword,
+  FormForgotPassword,
+} from "./welcome/Auth";
 import "./styles/Welcome.css";
 
 export function Welcome() {
@@ -59,7 +59,7 @@ export function Welcome() {
           </div>
         </>
       ) : step == 2 ? (
-        <Email
+        <FormEmail
           step={step}
           updateStep={handleStep}
           title="Entrar"
@@ -67,7 +67,7 @@ export function Welcome() {
           onChange={handleEmailChange}
         />
       ) : step == 3 ? (
-        <Password
+        <FormPassword
           step={step}
           updateStep={handleStep}
           title="Entrar"
@@ -76,7 +76,7 @@ export function Welcome() {
           handleSubmit={handleSubmit}
         />
       ) : step == 4 ? (
-        <ForgotPassword
+        <FormForgotPassword
           step={step}
           updateStep={handleStep}
           title="Recuperar Senha"
@@ -85,7 +85,7 @@ export function Welcome() {
           handleSubmit={handleSubmit}
         />
       ) : step == 5 ? (
-        <Name
+        <FormName
           step={step}
           updateStep={handleStep}
           title="Criar Conta"
@@ -93,7 +93,7 @@ export function Welcome() {
           onChange={handleNameChange}
         />
       ) : step == 6 ? (
-        <Email
+        <FormEmail
           step={step}
           updateStep={handleStep}
           title="Criar Conta"
@@ -101,7 +101,7 @@ export function Welcome() {
           onChange={handleEmailChange}
         />
       ) : (
-        <Password
+        <FormPassword
           step={step}
           updateStep={handleStep}
           title="Criar Conta"

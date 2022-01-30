@@ -1,7 +1,5 @@
-import { isValid } from "date-fns";
-import { useRef } from "react";
 import { Button, Field, Forgot } from "./auth/Display";
-import "./styles/Auth.css";
+import "./Auth.css";
 
 type AuthProps = {
   step: number;
@@ -12,7 +10,7 @@ type AuthProps = {
   handleSubmit?: any;
 };
 
-export function Name(props: AuthProps) {
+export function FormName(props: AuthProps) {
   const step = props.step;
 
   const nextStep = () => {
@@ -68,7 +66,7 @@ export function Name(props: AuthProps) {
   );
 }
 
-export function Email(props: AuthProps) {
+export function FormEmail(props: AuthProps) {
   const step = props.step;
   const nextStep = () => {
     props.updateStep(step + 1);
@@ -121,7 +119,7 @@ export function Email(props: AuthProps) {
   );
 }
 
-export function Password(props: AuthProps) {
+export function FormPassword(props: AuthProps) {
   const step = props.step;
 
   const nextStep = () => {
@@ -161,7 +159,7 @@ export function Password(props: AuthProps) {
   );
 }
 
-export function ForgotPassword(props: AuthProps) {
+export function FormForgotPassword(props: AuthProps) {
   const step = props.step;
 
   const prevStep = () => {

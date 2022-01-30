@@ -12,7 +12,7 @@ type DescriptionProps = {
   description: string;
 };
 
-export function Login({ updateStep }: any) {
+export function BtnLogin({ updateStep }: any) {
   const handleStep = () => {
     updateStep(2);
   };
@@ -23,7 +23,7 @@ export function Login({ updateStep }: any) {
   );
 }
 
-export function Register({ updateStep }: any) {
+export function BtnRegister({ updateStep }: any) {
   const handleStep = () => {
     updateStep(5);
   };
