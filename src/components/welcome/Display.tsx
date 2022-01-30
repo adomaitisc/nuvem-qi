@@ -1,7 +1,7 @@
 import "./Display.css";
 
 type ButtonProps = {
-  onClick: any;
+  updateStep: any;
 };
 
 type TitleProps = {
@@ -12,17 +12,23 @@ type DescriptionProps = {
   description: string;
 };
 
-export function Login(props: ButtonProps) {
+export function Login({ updateStep }: any) {
+  const handleStep = () => {
+    updateStep(2);
+  };
   return (
-    <button onClick={props.onClick} className="display-login">
+    <button onClick={handleStep} className="display-login">
       Entrar
     </button>
   );
 }
 
-export function Register(props: ButtonProps) {
+export function Register({ updateStep }: any) {
+  const handleStep = () => {
+    updateStep(5);
+  };
   return (
-    <button onClick={props.onClick} className="display-register">
+    <button onClick={handleStep} className="display-register">
       Registrar
     </button>
   );

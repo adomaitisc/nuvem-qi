@@ -1,63 +1,115 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import {
   Title,
   Description,
   Login as BtnLogin,
   Register as BtnRegister,
 } from "./welcome/Display";
-import { Login, Register } from "./Auth";
+import { Name, Email, Password, ForgotPassword } from "./Auth";
 import "./styles/Welcome.css";
 
 export function Welcome() {
-  const [login, setLogin] = useState(false);
-  const [register, setRegister] = useState(false);
+  const [step, setStep] = useState(1);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
 
-  const handleLogin = () => {
-    window.alert("Login");
+  const handleNameChange = (e: any) => {
+    setName(e.target.value);
   };
-  const handleRegister = () => {
-    window.alert("Register");
+  const handleEmailChange = (e: any) => {
+    setEmail(e.target.value);
+  };
+  const handlePassChange = (e: any) => {
+    setPass(e.target.value);
+  };
+
+  const handleStep = (step: SetStateAction<number>) => {
+    setStep(step);
+  };
+
+  const handleSubmit = (step: SetStateAction<number>) => {
+    switch (step) {
+      case 3:
+        //login
+        window.alert("email: " + email + ", senha: " + pass);
+        break;
+      case 4:
+        //forgot
+        window.alert("email: " + email);
+        break;
+      case 7:
+        //register
+        window.alert(
+          "nome: " + name + ", email: " + email + ", senha: " + pass
+        );
+    }
   };
 
   return (
-    <main className="welcome-area">
-      {login ? (
-        <Login
-          onSubmit={() => {
-            handleLogin();
-          }}
-          onClick={() => {
-            setLogin(false);
-          }}
-        />
-      ) : register ? (
-        <Register
-          onSubmit={() => {
-            handleRegister();
-          }}
-          onClick={() => {
-            setRegister(false);
-          }}
-        />
-      ) : (
+    <form className="welcome-area">
+      {step == 1 ? (
         <>
           <Title title="Bem vindo à Núvem Qi." />
           <Description description="Pastas, Arquivos, e Documentos Qi em uma plataforma Única e Inteligente." />
           <div className="welcome-buttons">
-            <BtnLogin
-              onClick={() => {
-                setLogin(true);
-              }}
-            />
+            <BtnLogin updateStep={handleStep} />
             <p className="welcome-or">ou</p>
-            <BtnRegister
-              onClick={() => {
-                setRegister(true);
-              }}
-            />
+            <BtnRegister updateStep={handleStep} />
           </div>
         </>
+      ) : step == 2 ? (
+        <Email
+          step={step}
+          updateStep={handleStep}
+          title="Entrar"
+          value={email}
+          onChange={handleEmailChange}
+        />
+      ) : step == 3 ? (
+        <Password
+          step={step}
+          updateStep={handleStep}
+          title="Entrar"
+          value={pass}
+          onChange={handlePassChange}
+          handleSubmit={handleSubmit}
+        />
+      ) : step == 4 ? (
+        <ForgotPassword
+          step={step}
+          updateStep={handleStep}
+          title="Recuperar Senha"
+          value={email}
+          onChange={handleEmailChange}
+          handleSubmit={handleSubmit}
+        />
+      ) : step == 5 ? (
+        <Name
+          step={step}
+          updateStep={handleStep}
+          title="Criar Conta"
+          value={name}
+          onChange={handleNameChange}
+        />
+      ) : step == 6 ? (
+        <Email
+          step={step}
+          updateStep={handleStep}
+          title="Criar Conta"
+          value={email}
+          onChange={handleEmailChange}
+        />
+      ) : (
+        <Password
+          step={step}
+          updateStep={handleStep}
+          title="Criar Conta"
+          value={pass}
+          onChange={handlePassChange}
+          handleSubmit={handleSubmit}
+        />
       )}
-    </main>
+    </form>
   );
 }

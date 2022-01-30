@@ -26,6 +26,12 @@
   outline: none;
 }
 
+.field-info {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .button-submit {
   border: none;
   margin-top: 1rem;

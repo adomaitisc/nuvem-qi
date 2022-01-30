@@ -5,8 +5,11 @@ import "./Display.css";
 type FieldProps = {
   label: string;
   type: string;
+  value: string;
   placeholder: string;
-  ref: any;
+  onChange: any;
+  pattern?: string;
+  info?: string;
 };
 
 type ButtonProps = {
@@ -19,19 +22,23 @@ export function Field(props: FieldProps) {
     <div className="field-wrapper">
       <label className="field-label">{props.label}</label>
       <input
+        id="input"
         className="field-input"
         type={props.type}
         required
         placeholder={props.placeholder}
-        ref={props.ref}
+        onChange={props.onChange}
+        value={props.value}
+        pattern={props.pattern}
       />
+      {props.info && <p className="field-info">{props.info}</p>}
     </div>
   );
 }
 
 export function Button(props: ButtonProps) {
   return (
-    <button className="button-submit" type="submit" onClick={props.onClick}>
+    <button type="button" className="button-submit" onClick={props.onClick}>
       {props.label}
     </button>
   );
