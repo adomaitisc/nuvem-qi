@@ -1,13 +1,13 @@
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from "react";
 import { AuthProvider } from "./hooks/useAuth";
 import App from "./App";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <StrictMode>
     <AuthProvider>
       <App />
     </AuthProvider>
-  </BrowserRouter>,
+  </StrictMode>,
   document.getElementById("root")
 );

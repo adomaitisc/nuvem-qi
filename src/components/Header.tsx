@@ -2,7 +2,7 @@ import "./styles/Header.css";
 import logo from "../images/logo.svg";
 
 type HeaderProps = {
-  title: string;
+  title?: string;
 };
 
 export function Header(props: HeaderProps) {

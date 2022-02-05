@@ -6,10 +6,12 @@ import {
   FormPassword,
   FormForgotPassword,
 } from "./welcome/Auth";
+// import { useAuth } from "../hooks/useAuth";
 import "./styles/Welcome.css";
 
 export function Welcome() {
   const [step, setStep] = useState(1);
+  // const [error, setError] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -26,24 +28,6 @@ export function Welcome() {
 
   const handleStep = (step: SetStateAction<number>) => {
     setStep(step);
-  };
-
-  const handleSubmit = (step: SetStateAction<number>) => {
-    switch (step) {
-      case 3:
-        //login
-        window.alert("email: " + email + ", senha: " + pass);
-        break;
-      case 4:
-        //forgot
-        window.alert("email: " + email);
-        break;
-      case 7:
-        //register
-        window.alert(
-          "nome: " + name + ", email: " + email + ", senha: " + pass
-        );
-    }
   };
 
   return (
@@ -73,7 +57,7 @@ export function Welcome() {
           title="Entrar"
           value={pass}
           onChange={handlePassChange}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
         />
       ) : step == 4 ? (
         <FormForgotPassword
@@ -82,7 +66,7 @@ export function Welcome() {
           title="Recuperar Senha"
           value={email}
           onChange={handleEmailChange}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
         />
       ) : step == 5 ? (
         <FormName
@@ -107,7 +91,7 @@ export function Welcome() {
           title="Criar Conta"
           value={pass}
           onChange={handlePassChange}
-          handleSubmit={handleSubmit}
+          // handleSubmit={handleSubmit}
         />
       )}
     </form>
